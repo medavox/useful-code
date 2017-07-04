@@ -4,15 +4,17 @@
 #automatically commit and push those changes to master
 REMOTE_FILE='https://medavox.github.io/autocommit.txt'
 CHECK_PHRASE="do auto-commit"
+REMOTE='origin modules'
+REPO_DIR='~/src/medi/'
 
-cd ~/src/medi/
+cd $REPO_DIR
 git diff --quiet
 result=$?
 if [ $result -eq 1 ] ; then
 	checkline=$( curl $REMOTE_FILE )
 	if [[ $checkline = $CHECK_PHRASE ]] ; then
         echo remote file matches string, committing and pushing...
-		git commit -am "auto-commit performed by remote request" && git push origin modules
+		git commit -am "auto-commit performed by remote request" && git push $REMOTE
     else
         echo remote file contains incorrect string, not committing
 	fi
