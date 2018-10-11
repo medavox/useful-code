@@ -31,7 +31,7 @@ class SmsReceiver : BroadcastReceiver() {
         return "from=$originatingAddress; "+
                 "body={$messageBody}; "
     }
-
+    //based on work from http://niels.nu/blog/2016/java-rsa.html
     fun generateKeyPair(): KeyPair {
         val generator = KeyPairGenerator.getInstance("RSA")
         //Only <=768-bit signatures can fit into a single SMS message (when base64 encoded),
