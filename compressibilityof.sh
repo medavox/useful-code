@@ -1,4 +1,7 @@
 #!/bin/bash
+## Compresses a 4096-byte chunk from the middle of a file
+# and returns the percent size of the original.
+# Acts as a rough guide of a file's compressibility
 function filesize {
 	du -b $1 | { read first rest ; echo $first ; }
 }
