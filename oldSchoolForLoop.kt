@@ -1,3 +1,5 @@
+//simulates a traditional 3-statement for-loop in kotlin
+
 fun <T> fur(initializer: () -> T,
             loopCheck:(T) -> Boolean,
             update:(T) -> T,
