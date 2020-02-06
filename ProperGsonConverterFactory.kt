@@ -29,6 +29,12 @@ import retrofit2.Retrofit
  * This is now unnecessary, and disables modern GSON's clever serialisation of subclasses
  * (which also serialises fields only present in the subclass-instance of a type).
  *
+ * Requires Retrofit and OkHttp, obviously. Add this to your build.gradle:
+ * ```
+ *  implementation("com.squareup.okhttp3:okhttp:" + okHttpVer)
+ *  implementation("com.squareup.retrofit2:retrofit:" + retrofitVer)
+ * ```
+ *
  * @constructor Construct an instance.
  * @param gson the Gson object to use for conversion.
  */
