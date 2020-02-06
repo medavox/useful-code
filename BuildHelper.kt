@@ -13,12 +13,13 @@ You can use it to provide the IP address of the compiling machine
 to the compiled app (for debugging purposes),
 by calling it from your `build.gradle` file with the following groovy syntax:
 ```groovy
+//declare the task
 task storeCompileTimeIpAddress {
     //the groovy syntax to access a Kotlin companion object's function is:
     //ClassName.@companion.functionName()
     new BuildHelper().generateCompileTimeLocalIpAddress(generatedSrcDir)
 }
-
+//make the task run
 preBuild.dependsOn storeCompileTimeIpAddress
 ```*/
 class BuildHelper {
