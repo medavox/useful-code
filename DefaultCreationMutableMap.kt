@@ -1,5 +1,3 @@
-import android.util.Log
-
 /**Acts like a normal [MutableMap] unless .get(key) would return null,
  * in which case it creates a new value for that key (specified by [newElementToAddWhenMissing]),
  * adds it to the underlying map, then returns it. [get] is thus non-null for this MutableMap.*/
@@ -22,9 +20,7 @@ class DefaultCreationMutableMap<K, V>(
 
         Log.d(TAG, "tables before size: ${map.size}")
         val newValue = newElementToAddWhenMissing(key)
-        Log.d(TAG, "creating a default value: $newValue")
         map.put(key, newValue)
-        Log.d(TAG, "tables after size: ${map.size}")
         return newValue
     }
 
