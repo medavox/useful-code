@@ -33,7 +33,7 @@ class BuildHelper {
      * but the JDK `InetAddress.getLocalHost` method does not specify the algorithm used to
      * select the address returned under such circumstances,
      * and will often return the loopback address, which is not valid for network communication.
-     * Details [here](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4665037).
+     * Details [here](https://bugs.java.com/bugdatabase/view_bug?bug_id=4665037).
      *
      *
      * This method will scan all IP addresses on all network interfaces on the host machine,
